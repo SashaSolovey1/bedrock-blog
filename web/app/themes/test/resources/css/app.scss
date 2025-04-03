@@ -1,0 +1,49 @@
+@import "tailwindcss" theme(static);
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;500;600;700&family=Spartan:wght@400;600;700&display=swap');
+@source "../views/";
+@source "../../app/";
+
+@layer base {
+  body {
+    font-family: 'Mulish', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Spartan', sans-serif;
+  }
+}
+
+
+
+@layer components {
+  #app {
+    @apply mx-auto max-w-[300px] sm:max-w-[500px] md:max-w-[600px] lg:max-w-[960px] xl:max-w-[1170px];
+  }
+
+  .menu-item a {
+    text-decoration: none !important;
+    font-family: 'Spartan', sans-serif;
+    @apply font-semibold text-base;
+  }
+
+  .form-flex {
+    @apply flex flex-col lg:flex-row;
+  }
+
+  .wpcf7 input[type="email"] {
+    @apply w-full sm:w-[400px] px-4 py-2 bg-[#FFFFFF1C] text-white border-b border-white placeholder:text-white font-[Roboto] text-[14px] leading-[24px] font-normal;
+  }
+
+  .wpcf7 input[type="submit"] {
+    @apply px-6 py-2 text-white bg-[#00E6CA] rounded hover:opacity-90 transition duration-200 cursor-pointer font-sans text-[20px] leading-[28px] font-normal text-center;
+  }
+
+  .wpcf7 form.invalid .wpcf7-response-output,
+  .wpcf7 form.sent .wpcf7-response-output {
+    @apply mt-4 text-white text-sm;
+  }
+
+  .wpcf7-spinner {
+    display: none !important;
+  }
+}
