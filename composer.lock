@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "40b390075ff743ea1a2d0aebcf191747",
+    "content-hash": "41f1bc6ecfa63d2ade4c02602f408750",
     "packages": [
         {
             "name": "brick/math",
@@ -6944,6 +6944,42 @@
                 }
             ],
             "time": "2025-02-19T16:45:27+00:00"
+        },
+        {
+            "name": "florianmoser/bedrock-deployer",
+            "version": "1.24.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/FlorianMoser/bedrock-deployer.git",
+                "reference": "88e74734ce5abf8ae59afe35c0ad5f624174ef54"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/FlorianMoser/bedrock-deployer/zipball/88e74734ce5abf8ae59afe35c0ad5f624174ef54",
+                "reference": "88e74734ce5abf8ae59afe35c0ad5f624174ef54",
+                "shasum": ""
+            },
+            "require": {
+                "deployer/deployer": ">=7.0",
+                "vlucas/phpdotenv": "^5.3"
+            },
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Florian Moser",
+                    "email": "info@novalab.ch"
+                }
+            ],
+            "description": "Deployer recipes for Roots Bedrock",
+            "support": {
+                "issues": "https://github.com/FlorianMoser/bedrock-deployer/issues",
+                "source": "https://github.com/FlorianMoser/bedrock-deployer/tree/1.24.0"
+            },
+            "time": "2024-06-28T08:04:34+00:00"
         },
         {
             "name": "laravel/pint",
