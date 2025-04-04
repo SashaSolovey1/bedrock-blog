@@ -11,15 +11,15 @@ require 'vendor/florianmoser/bedrock-deployer/recipe/sage.php';
 set('repository', 'https://github.com/SashaSolovey1/bedrock-blog.git');
 set('shared_dirs', [
     'web/app/uploads',
-    'web/app/cache/acorn/framework/cache',
-]);
+    'web/app/cache',
+    ]);
 set('writable_dirs', [
-    'web/app/cache/acorn/framework/cache',
+    'web/app/cache',
+    'web/app/cache/acorn',
+    'web/app/cache/acorn/framework/views',
 ]);
 set('local_root', __DIR__);
 set('theme_path', 'web/app/themes/test');
-set('vagrant_dir', __DIR__);
-set('vagrant_root', '/var/www/html/test/current');
 set('sync_dirs', [
     __DIR__ . '/web/app/uploads/' => '{{deploy_path}}/shared/web/app/uploads/',
 ]);
@@ -49,7 +49,6 @@ task('push:db', function () {
     writeln("<info>Importing SQL dump on remote server...</info>");
     run("cd {$remotePath} && wp db import {$remoteDump}");
 
-    // Очистка
     writeln("<info>Removing local SQL dump...</info>");
     runLocally("rm {$localDump}");
 
