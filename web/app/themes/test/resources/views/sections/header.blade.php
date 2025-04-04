@@ -52,7 +52,7 @@
 
     {!! wp_nav_menu([
       'theme_location' => 'primary_navigation',
-      'menu_class' => 'flex flex-col gap-6 font-semibold text-lg text-black',
+      'menu_class' => 'flex flex-col gap-6 font-semibold text-lg text-black z-10',
       'echo' => false,
     ]) !!}
   </div>

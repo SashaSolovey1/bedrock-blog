@@ -1,4 +1,4 @@
-<section class="relative left-1/2 translate-x-[-50%] xl:w-screen xl:px-10 2xl:px-0 bg-white py-10 xl:py-20 overflow-hidden">
+<section class="relative xl:left-1/2 xl:translate-x-[-50%] xl:w-screen xl:px-10 2xl:px-0 bg-white py-10 xl:py-20 overflow-hidden">
   <div class="mx-auto w-full xl:max-w-[1370px] flex flex-col-reverse xl:flex-row items-center xl:items-start justify-center xl:justify-between gap-[30px] xl:gap-0">
     <div class="w-full xl:w-[558px] xl:h-[581px] flex flex-col gap-2.5 xl:gap-6 text-left">
       @if ($label)
@@ -21,7 +21,7 @@
     </div>
 
     @if ($image)
-      <div class="relative w-[285px] sm:w-[485px] md:w-[585px] lg:w-[945px] h-[285px] sm:h-[485px] md:h-[520px] xl:max-w-[700px] xl:w-full xl:h-[581px]">
+      <div class="relative self-start w-[285px] sm:w-[485px] md:w-[585px] lg:w-[945px] h-[285px] sm:h-[485px] md:h-[520px] xl:max-w-[700px] xl:w-full xl:h-[581px]">
         <div class="absolute w-full h-full bg-[#00E6CA] z-0"></div>
         <img
           src="{{ $image['url'] }}"

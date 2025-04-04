@@ -1,5 +1,4 @@
 <section class="my-10">
-  <div class="max-w-[1300px] mx-auto px-4">
     @if ($heading)
       <h2 class="text-[28px] lg:text-[36px] font-bold text-[#161B3D] text-center mb-12">{{ $heading }}</h2>
     @endif
@@ -68,5 +67,4 @@
         </a>
       </div>
     @endif
-  </div>
 </section>
