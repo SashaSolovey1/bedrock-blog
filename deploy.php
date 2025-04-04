@@ -13,6 +13,7 @@ set('shared_dirs', [
     'web/app/uploads',
     'web/app/cache',
     ]);
+set('shared_files', ['.env']);
 set('writable_dirs', [
     'web/app/cache',
     'web/app/cache/acorn',
@@ -31,7 +32,13 @@ host('188.245.201.118')
     ->set('stage', 'production');
 
 desc('Deploy the application');
-
+task('deploy:writable', function () {
+    $dirs = get('writable_dirs');
+    foreach ($dirs as $dir) {
+        run("sudo chown -R www-data:www-data {{release_path}}/$dir");
+        run("sudo chmod -R 775 {{release_path}}/$dir");
+    }
+});
 task('push:db', function () {
     $timestamp = date('Ymd_His');
     $localDump = "_db_export_{$timestamp}.sql";
@@ -55,25 +62,17 @@ task('push:db', function () {
     writeln("<info>Removing remote SQL dump...</info>");
     run("rm {$remoteDump}");
 
-
-
     writeln("<info>✅ Database successfully pushed to remote.</info>");
 });
 
-task('npm:build', function () {
-    $themePath = '{{release_path}}/' . get('theme_path');
-    run("cd {$themePath} && npm install && npm run build");
-});
 
 task('deploy', [
     'deploy:prepare',
     'deploy:update_code',
     'deploy:shared',
-    'deploy:writable',
     'bedrock:vendors',
     'sage:vendors',
-    'sage:compile',
-    'bedrock:env',
+    'push:assets',
     'deploy:clear_paths',
     'deploy:symlink',
     'deploy:unlock',
