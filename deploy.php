@@ -16,6 +16,8 @@ require 'vendor/florianmoser/bedrock-deployer/recipe/trellis.php';
 // Git repository
 set('repository', 'https://github.com/SashaSolovey1/bedrock-blog.git');
 
+set('keep_releases', 2);
+
 // Shared directories and files
 set('shared_dirs', [
     'web/app/uploads',
@@ -62,6 +64,7 @@ desc('Deploy your project');
 task('deploy', [
     'deploy:prepare',
     'deploy:update_code',
+    'deploy:shared',
     'bedrock:vendors',
     'sage:vendors',
     'push:assets',

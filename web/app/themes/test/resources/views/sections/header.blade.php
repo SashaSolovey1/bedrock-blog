@@ -18,7 +18,7 @@
             </svg>
           </button>
 
-          <div x-show="open" @click.outside="open = false" class="absolute right-0 mt-2 bg-white shadow-md rounded p-4 z-50 w-72">
+          <div x-show="open" @click.outside="open = false" class="absolute right-0 mt-2 bg-white shadow-md rounded z-50 w-72">
             <form role="search" method="get" action="{{ home_url('/') }}" class="flex items-center gap-2">
               <input type="search" name="s" class="w-full border border-gray-300 px-3 py-2 rounded focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Search..." />
               <button type="submit" class="text-white bg-black px-4 py-2 rounded hover:bg-gray-800">Go</button>
