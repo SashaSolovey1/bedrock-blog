@@ -1,5 +1,4 @@
 
-````markdown
 # Bedrock + Sage
 
 Сучасна структура WordPress з використанням [Bedrock](https://roots.io/bedrock/) та темою на базі [Sage](https://roots.io/sage/).
@@ -10,10 +9,10 @@
 
 1. Клонувати репозиторій:
 
-```
+```bash
 git clone https://github.com/SashaSolovey1/bedrock-blog.git
 cd bedrock-blog
-````
+```
 
 2. Встановити PHP-залежності:
 
